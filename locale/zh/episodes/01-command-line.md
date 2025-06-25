@@ -1,13 +1,13 @@
 ---
-title: First session with GAP
+title: 与GAP的第一次会话
 teaching: 30
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Time-saving tips and tricks
-- Using GAP's help system
+- 节省时间的技巧和方法
+- 使用GAP的帮助系统
 - Basic objects and constructions in the GAP language
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
