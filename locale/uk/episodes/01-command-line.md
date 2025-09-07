@@ -1,5 +1,5 @@
 ---
-title: First session with GAP
+title: Перша сесія з GAP
 teaching: 30
 exercises: 10
 ---
