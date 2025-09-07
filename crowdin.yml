@@ -1,5 +1,4 @@
-preserve_hierarchy: true
-
+preserve_hierarchy: 1
 files:
   - source: /episodes/*.Rmd
     dest: /episodes/%file_name%.md
