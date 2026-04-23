@@ -6,9 +6,9 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Time-saving tips and tricks
-- Using GAP's help system
-- Basic objects and constructions in the GAP language
+- Поради та підказки, які заощадять час
+- Використання довідкової системи GAP
+- Базові об'єкти та конструкції в мові GAP
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
