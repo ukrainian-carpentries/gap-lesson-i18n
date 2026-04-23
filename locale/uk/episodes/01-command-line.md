@@ -18,11 +18,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-If GAP is installed correctly you should be able to start it. Exactly how
-you start GAP will depend on your operating system and how you installed
-GAP. GAP starts with the _banner_ displaying information about the version of
-the system and loaded components, and then displays the command line prompt
-`gap>`, for example:
+Якщо GAP встановлено правильно, ви повинні мати можливість його запустити. Як саме це зробити, залежатиме від вашої операційної системи та способу встановлення GAP. Після запуску, GAP виведе на екран свій _банер_, який відображає інформацію про версію системи та завантажені компоненти, а потім запрошення командного рядка `gap>`, наприклад:
 
 ```output
  ┌───────┐   GAP 4.9.2 of 04-Jul-2018
@@ -41,17 +37,13 @@ the system and loaded components, and then displays the command line prompt
 gap>
 ```
 
-To leave GAP, type `quit;` at the GAP prompt. Remember that all GAP commands,
-including this one, must be finished with a semicolon! Practice entering
-`quit;` to leave GAP, and then starting a new GAP session. Before continuing, you
-may wish to enter the following command to display GAP prompts and user inputs
-in different colours:
+Щоб вийти з GAP, введіть `quit;` у командному рядку GAP. Пам’ятайте, що всі команди GAP, включно з цією, мають закінчуватися крапкою з комою! Потренуйтеся вводити `quit;`, щоб вийти з GAP, а потім починати новий сеанс GAP. Перш ніж продовжити, ви можливо забажаєте ввести наступну команду, щоб відображати запрошення GAP та команди, введені користувачем у різних кольорах:
 
 ```gap
  ColorPrompt(true);
 ```
 
-The easiest way to start trying GAP out is as a calculator:
+Найпростіший шлях розпочати роботу з GAP - це використовувати GAP як калькулятор:
 
 ```gap
 ( 1 + 2^32 ) / (1 - 2*3*107 );
@@ -61,18 +53,14 @@ The easiest way to start trying GAP out is as a calculator:
 -6700417
 ```
 
-If you want to record what you did in a GAP session, so you can look over it
-later, you can enable logging with the `LogTo` function, like this.
+Якщо ви хочете записати те, що ви робили під час сеансу GAP, щоб ви могли переглянути це пізніше, ви можете ввімкнути ведення журналу за допомогою функції `LogTo`, як наведено далі.
 
 ```gap
 LogTo("gap-intro.log");
 ```
 
-This will create a file file `gap-intro.log` in the current directory which
-will contain all subsequent input and output that appears on your terminal.
-To stop logging, you can call `LogTo` without arguments, as in `LogTo();`,
-or leave GAP. Note that `LogTo` blanks the file before starting, if it
-already exists!
+Це створить файл `gap-intro.log` у поточному каталозі, який міститиме всі подальші вхідні та вихідні дані, які з’являтимуться у вашому терміналі.
+Щоб припинити ведення журналу, ви можете викликати `LogTo` без аргументів, як у `LogTo();`, або залишити GAP. Зауважте, що `LogTo` очищає файл перед запуском, якщо він уже існує!
 
 It can be useful to leave some comments in the log file in case you
 return to it in the future. A comment in GAP starts with the symbol `#` and
