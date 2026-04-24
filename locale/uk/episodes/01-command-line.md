@@ -62,17 +62,17 @@ LogTo("gap-intro.log");
 Це створить файл `gap-intro.log` у поточному каталозі, який міститиме всі подальші вхідні та вихідні дані, які з’являтимуться у вашому терміналі.
 Щоб припинити ведення журналу, ви можете викликати `LogTo` без аргументів, як у `LogTo();`, або залишити GAP. Зауважте, що `LogTo` очищає файл перед запуском, якщо він уже існує!
 
-It can be useful to leave some comments in the log file in case you
-return to it in the future. A comment in GAP starts with the symbol `#` and
-continues to the end of the line. You can enter the following after the
-GAP prompt:
+Може бути корисним залишити кілька коментарів у файлі журналу на випадок,
+якщо ви повернетеся до нього в майбутньому. Коментар у GAP починається з символу `#` і
+продовжується до кінця рядка. Ви можете ввести наступне після
+підказки GAP:
 
 ```gap
-# GAP Software Carpentry Lesson
+# Урок Software Carpentry GAP
 ```
 
-then after pressing the Return key, GAP will display a new prompt but the comment
-will be written to the log file.
+тоді після натискання клавіші Return GAP відобразить нову підказку, але коментар
+буде записаний у файл журналу.
 
 The log file records all interaction with GAP that happens after the call
 to `LogTo`, but not before. We can repeat our calculation from above
