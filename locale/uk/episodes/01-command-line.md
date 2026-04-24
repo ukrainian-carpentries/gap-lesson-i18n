@@ -74,12 +74,12 @@ LogTo("gap-intro.log");
 тоді після натискання клавіші Return GAP відобразить нову підказку, але коментар
 буде записаний у файл журналу.
 
-The log file records all interaction with GAP that happens after the call
-to `LogTo`, but not before. We can repeat our calculation from above
-if we want to record it as well. Instead of retyping it, we will use the Up and Down
-arrow keys to scroll the _command line history_. Repeat this until you see
-the formula again, then press Return (the location of the cursor in the command
-line does not matter):
+Файл журналу записує всю взаємодію з GAP, яка відбувається після виклику
+`LogTo`, але не раніше. Ми можемо повторити наші обчислення вище,
+якщо ми також хочемо їх записати. Замість того, щоб вводити їх повторно, ми будемо використовувати клавіші зі стрілками вгору та вниз
+для прокручування _історії командного рядка_. Повторюйте це, доки знову не побачите
+формулу, потім натисніть Return (розташування курсору в командному
+рядку не має значення):
 
 ```gap
 ( 1 + 2^32 ) / (1 - 2*3*107 );
@@ -89,12 +89,11 @@ line does not matter):
 -6700417
 ```
 
-You can also edit existing commands. Press Up once more, and then use the
-Left and Right arrow keys, Delete or Backspace to edit it and replace
-32 by 64 (some other useful shortcuts are
-Ctrl-A and Ctrl-E to move the cursor to the beginning and end of the
-line, respectively). Now press the Return key (at any position of the
-cursor in the command line):
+You can also edit existing commands. Натисніть клавішу «Вгору» ще раз, а потім використовуйте
+клавіші зі стрілками вліво та вправо, Delete або Backspace, щоб відредагувати їх та замінити 32 на 64 (інші корисні комбінації клавіш —
+Ctrl-A та Ctrl-E, щоб перемістити курсор на початок і кінець
+рядку, відповідно). Тепер натисніть клавішу Return (у будь-якій позиції
+курсору в командному рядку):
 
 ```gap
 ( 1 + 2^64 ) / (1 - 2*3*107 );
@@ -104,13 +103,13 @@ cursor in the command line):
 -18446744073709551617/641
 ```
 
-It is useful to know that if the command line history is long, one could
-perform a partial search by typing the initial part of the command and using
-Up and Down arrow keys after that, to scroll only the lines that begin with
-the same string.
+Корисно знати, що якщо історія командного рядка велика, можна
+виконати частковий пошук, ввівши початкову частину команди, а потім використовуючи
+клавіші зі стрілками вгору та вниз, щоб прокрутити лише ті рядки, які починаються
+з введених символів.
 
-If you want to store a value for later use, you can assign it to a name
-using `:=`
+Якщо ви бажаєте зберегти значення для подальшого використання, ви можете присвоїти йому ім'я
+за допомогою `:=`
 
 ```gap
 universe := 6*7;
@@ -118,22 +117,19 @@ universe := 6*7;
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## `:=`, `=` and `<>`
+## ## `:=`, `=` і `<>`
 
-- In other languages you might be more familiar with using `=`, to assign
-  variables, but GAP uses `:=`.
+- В інших мовах Ви можете бути більш знайомі з використанням `=`, щоб присвоювати значення змінним, але GAP використовує `:=`.
 
-- GAP uses `=` to compare if two things are the same (where other languages might
-  use `==`).
+- GAP використовує `=` для порівняння, якщо дві об'єкти однакові (де інші мови можуть використовувати `==`).
 
-- Finally, GAP uses `<>` to check if two things are not equal (rather than the `!=`
-  you might have seen before).
+- Нарешті, GAP використовує `<>`, щоб перевірити, чи два об'єкти не рівні (замість `!=`, що ви могли бачити раніше).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Whitespace characters (i.e. Spaces, Tabs and Returns) are insignificant in GAP,
-except if they occur inside a string. For example, the previous input
-could be typed without spaces:
+Whitespace characters (i.e. пробіли, табуляції та символи переводу рядка) не мають значення в GAP,
+за винятком випадків, коли вони знаходяться всередині рядка. Наприклад, попереднє введеня
+можна ввести без пробілів:
 
 ```gap
 (1+2^64)/(1-2*3*107);
@@ -143,8 +139,8 @@ could be typed without spaces:
 -18446744073709551617/641
 ```
 
-Whitespace symbols are often used to format more complicated commands for
-better readability. For example, the following input which creates a 3×3 matrix:
+Пробіли часто використовуються для форматування більш складних команд
+для кращої читабельності. Наприклад, наступне введення, яке створює матрицю 3×3: For example, the following input which creates a 3×3 matrix:
 
 ```gap
 m:=[[1,2,3],[4,5,6],[7,8,9]];
@@ -154,9 +150,9 @@ m:=[[1,2,3],[4,5,6],[7,8,9]];
 [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ]
 ```
 
-We can instead write our matrix over 3 lines. In this case, instead of the full prompt
-`gap>`, a partial prompt `>` will be displayed until the user finishes
-the input with a semicolon:
+Замість цього ми можемо записати нашу матрицю в 3 рядки. У цьому випадку замість повної підказки
+`gap>` відображатиметься часткова підказка `>`, доки користувач не завершить
+введення крапкою з комою:
 
 ```gap
 gap> m:=[[ 1, 2, 3 ],
@@ -168,7 +164,7 @@ gap> m:=[[ 1, 2, 3 ],
 [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ]
 ```
 
-You can use `Display` to pretty-print variables, including this matrix:
+Ви можете використовувати `Display` для красивого друку змінних, включаючи цю матрицю:
 
 ```gap
 Display(m);
@@ -180,8 +176,8 @@ Display(m);
   [  7,  8,  9 ] ]
 ```
 
-In general GAP functions like `LogTo` and `Display` are called using brackets,
-which contain a (possibly empty) list of arguments.
+Загалом функції GAP, як наприклад `LogTo` і `Display`, викликаються за допомогою дужок,
+які містять (можливо, порожній) список аргументів.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
