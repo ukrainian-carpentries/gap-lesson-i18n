@@ -14,7 +14,7 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Working with the GAP command line
+- Робота з командним рядком GAP
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -183,9 +183,9 @@ Display(m);
 
 ## Функції також є об’єктами GAP
 
-Check what happens if you forget to add brackets,
-e.g. type `LogTo;` and `Factorial;`
-We will explain the differences in these outputs later.
+Перевірте, що станеться, якщо ви забудете додати дужки,
+наприклад, введіть `LogTo;` і `Factorial;`
+Пізніше ми пояснимо відмінності в цих результатах.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
