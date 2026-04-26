@@ -409,20 +409,20 @@ gap> elts[1]; elts[3]; Length(elts);
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Lists are more than arrays
+## Списки — це більше, ніж масиви
 
-- May contain holes or be empty
+- Може містити дірки або бути порожнім
 
-- May dynamically change their length (with `Add`, `Append` or direct assigment)
+- Може динамічно змінювати їх довжину (за допомогою `Add`, `Append` або прямого призначення)
 
-- Not required to contain objects of the same type
+- Не обов’язково містить об’єкти одного типу
 
-- See more in [GAP Tutorial: Lists and Records](https://docs.gap-system.org/doc/tut/chap3.html)
+- Дивіться більше в [GAP Tutorial: Lists and Records](http://www.gap-system.org/Manuals/doc/tut/chap3.html)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Many functions in GAP refer to `Set`s. A set in GAP is just a list that happens to have
-no repetitions, no holes, and elements in increasing order. Here are some examples:
+Багато функцій у GAP посилаються на `Множини`. Множина у GAP — це лише список,
+який не має повторень, жодних дірок і елементів у порядку зростання. Ось кілька прикладів:
 
 ```gap
 gap> IsSet([1,3,5]); IsSet([1,5,3]); IsSet([1,3,3]);
@@ -434,12 +434,12 @@ false
 false
 ```
 
-Now let us consider an interesting calculation -- the average order of elements
-of `G`. There are many different ways to do this, we will consider a few of them
-here.
+Тепер давайте розглянемо цікаве обчислення - середній порядок елементів
+групи `G`. Існує багато різних способів зробити це, ми розглянемо деякі з них
+тут.
 
-A `for` loop in GAP allows you to do something for every member of a collection.
-The general form of a `for` loop is:
+Цикл `for` у GAP дозволяє щось робити для кожного члена колекції.
+Загальна форма циклу "for" така:
 
 ```gap
 for val in collection do
@@ -447,7 +447,7 @@ for val in collection do
 od;
 ```
 
-For example, to find the average order of our group `G` we can do.
+Наприклад, ми можемо знайти середній порядок нашої групи `G`.
 
 ```gap
 s:=0;;
@@ -461,9 +461,11 @@ s/Length(elts);
 31/12
 ```
 
-Actually, we can just directly loop over the elements of `G` (in general GAP
-will let you loop over most types of object). We have to switch to using `Size`
-instead of `Length`, as groups don't have a length!
+Насправді, ми можемо просто перебирати елементи `G` (загалом GAP
+дозволить вам перебирати більшість типів об’єктів). Нам потрібно перейти на використання `Size`
+замість `Length`, оскільки групи не мають довжини! We have to switch to using `Size`
+instead of `Length`, as groups don't have a length!Нам потрібно перейти на використання `Size`
+замість `Length`, оскільки групи не мають довжини!
 
 ```gap
 s:=0;;
@@ -477,8 +479,8 @@ s/Size(G);
 31/12
 ```
 
-There are other ways of looping. For example, we can instead loop over a range of integers,
-and accept `elts` like an array:
+Існують і інші способи зациклювання. Наприклад, натомість ми можемо перейти до діапазону цілих чисел
+прийняти `elts` як масив:
 
 ```gap
 s:=0;;
@@ -492,8 +494,8 @@ s/Length(elts);
 31/12
 ```
 
-However, often there are more compact ways of doing things. Here is a very
-short way:
+Однак часто існують більш компактні способи виконання завдань. Ось дуже
+короткий шлях:
 
 ```gap
 Sum( List( elts, Order ) ) / Length( elts );
@@ -503,30 +505,29 @@ Sum( List( elts, Order ) ) / Length( elts );
 31/12
 ```
 
-Let's break this last part down:
+Давайте розберемо останню частину:
 
-- `Order` finds the order of a single permutation.
-- `List(L,F)` makes a new list where the function `F` is applied to each
-  member of the list `L`.
-- `Sum(L)` adds up the members of a list `L`.
+- `Order` знаходить порядок однієї перестановки.
+- `List(L,F)` створює новий список, де функція `F` застосовується до кожного члена списку `L`.
+- `Sum(L)` додає члени списку `L`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Which approach is best?
+## Який підхід найкращий?
 
-Compare these approaches. Which one would you prefer to use?
+Порівняйте ці підходи. Якому із них ви віддасте перевагу?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-GAP has very helpful list manipulation tools. We will now show a few more examples.
+GAP має дуже корисні інструменти для роботи зі списками. Зараз ми покажемо ще кілька прикладів.
 
-Sometimes, GAP does not have the exact function we want.
-For example, `NrMovedPoints` gives the number of moved points of a permutation,
-but what if we want to find all permutations which move `4` points? This is where
-GAP's arrow notation comes in. `g -> e` makes a new function which takes one argument `g`,
-and returns the value of the expression `e`. Here are some examples:
+Іноді GAP не має тієї функції, яка нам потрібна.
+Наприклад, `NrMovedPoints` дає кількість переміщених точок перестановки,
+але що, якщо ми хочемо знайти всі перестановки, які пересувають 4 точки? Ось тут
+і з’являється позначення GAP зі стрілками. `g -> e` створює нову функцію, яка отримує один аргумент `g`
+і повертає значення виразу `e`. Ось деякі приклади:
 
-- finding all elements of `G` with no fixed points:
+- знаходження всіх елементів `G` без фіксованих точок:
 
 ```gap
 Filtered( elts, g -> NrMovedPoints(g) = 4 );
@@ -536,7 +537,7 @@ Filtered( elts, g -> NrMovedPoints(g) = 4 );
 [ (1,2)(3,4), (1,3)(2,4), (1,4)(2,3) ]
 ```
 
-- finding a permutation in `G` that conjugates (1,2) to (2,3)
+- знаходження перестановки в `G`, яка спрягає (1,2) та (2,3)
 
 ```gap
 First( elts, g -> (1,2)^g = (2,3) );
@@ -546,7 +547,7 @@ First( elts, g -> (1,2)^g = (2,3) );
 (1,2,3)
 ```
 
-Let's check this (remember that in GAP permutations are multiplied from left to right!):
+Давайте перевіримо це (пам’ятайте, що в GAP перестановки множаться зліва направо!):
 
 ```gap
 (1,2,3)^-1*(1,2)*(1,2,3)=(2,3);
@@ -556,7 +557,7 @@ Let's check this (remember that in GAP permutations are multiplied from left to 
 true
 ```
 
-- checking whether all elements of `G` move the point 1 to 2:
+- перевірка, чи всі елементи `G` пересувають точку 1 у 2:
 
 ```gap
 ForAll( elts, g -> 1^g <> 2 );
@@ -566,7 +567,7 @@ ForAll( elts, g -> 1^g <> 2 );
 false
 ```
 
-- checking whether there is an element in `G` which moves exactly two points:
+- перевірка того, чи є елемент у `G`, який переміщує рівно дві точки:
 
 ```gap
 ForAny( elts, g -> NrMovedPoints(g) = 2 );
@@ -578,7 +579,7 @@ false
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Use list operations to select from `elts` the stabiliser of the point 2 and the centraliser of the permutation (1,2)
+## Використовуйте операції зі списком, щоб вибрати з `elts` стабілізатор точки 2 і централізатор перестановки (1,2)
 
 - `Filtered( elts, g -> 2^g = 2 );`
 
@@ -588,16 +589,16 @@ false
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Remember that GAP is case-sensitive!
-- Do not panic if you see `Error, Variable: 'FuncName' must have a value`.
-- Care about names of variables and functions.
-- Use command line editing.
-- Use autocompletion instead of typing names of functions and variables in full.
-- Use `?` and `??` to view help pages.
-- Set the default help format to HTML using `SetHelpViewer`.
-- Use the `LogTo` function to save all GAP input and output into a text file.
-- If calculation takes too long, press <Control>\-C to interrupt it.
-- Read 'A First Session with GAP' from the GAP Tutorial.
+- Пам’ятайте, що GAP чутливий до регістру!
+- Не панікуйте, якщо побачите `Error, Variable: 'FuncName' must have a value`.
+- Звертайте увагу на імена змінних і функцій.
+- Використовуйте редагування командного рядка.
+- Використовуйте автозаповнення замість повного введення імен функцій і змінних.
+- Використовуйте `?` та `??`, щоб переглянути сторінки довідки.
+- Встановіть HTML в якості стандартного формату довідки за допомогою `SetHelpViewer`.
+- Використовуйте функцію `LogTo`, щоб зберегти всі введення та виведення GAP у текстовий файл.
+- Якщо обчислення триває занадто довго, натисніть <Control>\-C, щоб перервати його.
+- Прочитайте «Перше заняття з GAP» у підручнику з GAP.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
