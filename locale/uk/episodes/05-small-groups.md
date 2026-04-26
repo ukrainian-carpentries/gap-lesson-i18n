@@ -1,5 +1,5 @@
 ---
-title: Small groups search
+title: Пошук малих груп
 teaching: 40
 exercises: 15
 ---
