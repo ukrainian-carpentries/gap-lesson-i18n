@@ -6,31 +6,30 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Using the Small Groups Library
-- Designing a system of functions to fit together
+- Використовуючи Small Groups Library
+- Розробка системи функцій, яка сумісна
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Modular programming: putting functions together
-- How to check some conjecture for all groups of a given order
+- Модульне програмування: поєднання функцій разом
+- Як перевірити деяку гіпотезу для всіх груп заданого порядку
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this section, we wish to discover some non-trivial groups with an interesting
-property: namely, that the average order of their elements is an integer.
+У цьому розділі ми хочемо відкрити деякі нетривіальні групи з цікавою
+властивістю, а саме, що середній порядок їхніх елементів є цілим числом.
 
-The GAP distribution includes a number of data libraries
-(for example, search for the word "library" in the
-[list of packages distributed with GAP](https://www.gap-system.org/packages/)).
-One of them is the [Small Groups Library](https://gap-packages.github.io/smallgrp/) by
-Hans Ulrich Besche, Bettina Eick and Eamonn O'Brien.
+Дистрибутив GAP включає низку бібліотек даних (див. огляд
+[here](http://www.gap-system.org/Datalib/datalib.html)).
+Однією з них є
+[Small Groups Library](http://www.gap-system.org/Packages/sgl.html) Ганса Ульріха Беше, Беттіни Айк та Імона О'Брайена.
 
-This library provides various utilities to determine which information
-is stored there and submit queries to search for groups with desired
-properties. The key functions are `SmallGroup`, `AllSmallGroups`,
-`NrSmallGroups`, `SmallGroupsInformation` and `IdGroup`. For example:
+Ця бібліотека надає різні утиліти для визначення того, яка інформація
+там зберігається, і надсилання запитів для пошуку груп із потрібними
+властивостями. Ключовими функціями є `SmallGroup`, `AllSmallGroups`,
+`NrSmallGroups`, `SmallGroupsInformation` та `IdGroup`. Наприклад:
 
 ```output
 gap> NrSmallGroups(64);
@@ -55,22 +54,22 @@ gap> SmallGroupsInformation(64);
   IdSmallGroup is available for this size.
 
 gap> G:=SmallGroup(64,2);
-<pc group of size 64 with 6 generators>
+
 gap> AllSmallGroups(Size,64,NilpotencyClassOfGroup,5);
-[ <pc group of size 64 with 6 generators>, <pc group of size 64 with 6 generators>,
-  <pc group of size 64 with 6 generators> ]
+[  ,  ,
+   ]
 gap> List(last,IdGroup);
 [ [ 64, 52 ], [ 64, 53 ], [ 64, 54 ] ]
 ```
 
-We would like to use our own testing function, which we will create here,
-using inline notation (available for one-argument functions):
+Ми хотіли б використати нашу власну функцію тестування, яку ми створимо тут,
+використовуючи вбудовану нотацію (доступну для функцій з одним аргументом):
 
 ```gap
 TestOneGroup := G -> IsInt( AvgOrdOfGroup(G) );
 ```
 
-Now try, for example
+Тепер спробуйте, наприклад,
 
 ```gap
 List([TrivialGroup(),Group((1,2))],TestOneGroup);
@@ -90,17 +89,17 @@ gap> AllSmallGroups(Size,24,TestOneGroup,true);
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Modular programming begins here
+## Тут починається модульне програмування
 
-Why is returning booleans a good design decision for such functions,
-instead of just printing information or returning a string such as `"YES"` ?
+Чому повернення логічних значень є хорошим проєктним рішенням для таких функцій,
+замість того, щоб просто друкувати інформацію чи повертати рядок, наприклад `"YES"`?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-This is a simple example of a function which tests all groups of a given order.
-It creates one group at a time, checks the desired property, and returns as soon
-as an example is discovered. Otherwise it returns `fail` which is a special kind
-of boolean variable in GAP.
+Це простий приклад функції, яка перевіряє всі групи заданого порядку.
+Він створює одну групу за раз, перевіряє потрібну властивість і повертається, щойно
+буде виявлено приклад. В іншому випадку він повертає `fail`, який є особливим типом
+логічної змінної в GAP.
 
 ```gap
 TestOneOrderEasy := function(n)
@@ -114,7 +113,7 @@ return fail;
 end;
 ```
 
-For example,
+Наприклад,
 
 ```gap
 TestOneOrderEasy(1);
@@ -134,19 +133,18 @@ fail
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## `AllSmallGroups` runs out of memory -- what to do?
+## `AllSmallGroups` не вистачає пам'яті - що робити?
 
-- Use iteration over `[1..NrSmallGroups(n)]` as shown in the function above
-- Use `IdsOfAllSmallGroups` which accepts same arguments as `AllSmallGroups`
-  but returns ids instead of groups.
+- Використовуйте ітерацію над `[1..NrSmallGroups(n)]`, як показано у функції вище
+- Використовуйте `IdsOfAllSmallGroups`, яка приймає ті самі аргументи, що й `AllSmallGroups`, але повертає ідентифікатори замість груп.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Iterating over `[1..NrSmallGroups(n)]` gives you more flexibility if you need
-more control over the progress of calculation. For example, the next version
-of our testing function prints additional information about the number of the
-group being tested. It also supplies the testing function as an argument (why do
-you think this is better?).
+Ітерація над `[1..NrSmallGroups(n)]` дає вам більше гнучкості, якщо вам потрібно
+більше контролювати хід обчислення. Наприклад, наступна версія
+нашої функції тестування друкує додаткову інформацію про номер
+групи, що тестується. Він також надає функцію тестування як аргумент (чому
+ви думаєте, що це краще?).
 
 ```gap
 TestOneOrder := function(f,n)
@@ -164,22 +162,22 @@ return fail;
 end;
 ```
 
-For example,
+Наприклад,
 
 ```gap
 TestOneOrder(TestOneGroup,64);
 ```
 
-will display a changing counter during calculation and then return `fail`:
+відобразить змінний лічильник під час обчислення, а потім поверне `fail`:
 
 ```output
 64:267/267
 fail
 ```
 
-The next step is to integrate `TestOneOrder` into a function which will test
-all orders from 2 to `n` and stop as soon as it finds an example of a
-group with the average order of an element being an integer:
+Наступним кроком є інтеграція `TestOneOrder` у функцію, яка перевірить
+усі порядки від 2 до `n` і зупиниться, щойно знайде приклад
+групи, середній порядок елемента якого є цілим числом:
 
 ```gap
 TestAllOrders:=function(f,n)
@@ -194,7 +192,7 @@ return fail;
 end;
 ```
 
-It reports that there is such a group of order 105:
+Ми бачимо, що існує така група порядку 105:
 
 ```gap
 TestAllOrders(TestOneGroup,128);
@@ -220,21 +218,20 @@ TestAllOrders(TestOneGroup,128);
 [ 105, 1 ]
 ```
 
-To explore it further, we can get its `StructureDescription` (see
-[documentation](https://docs.gap-system.org/doc/ref/chap39.html#X87BF1B887C91CA2E)
-for the explanation of the notation it uses):
+Щоб дослідити її далі, ми можемо отримати її `StructureDescription` (див.
+[тут](http://www.gap-system.org/Manuals/doc/ref/chap39.html#X87BF1B887C91CA2E)
+для пояснення нотації, яку використано):
 
 ```gap
 G:=SmallGroup(105,1); AvgOrdOfGroup(G); StructureDescription(G);
 ```
 
 ```output
-<pc group of size 105 with 3 generators>
 17
 "C5 x (C7 : C3)"
 ```
 
-and then convert it to a finitely presented group to see its generators and relators:
+а потім перетворити її на скінченно представлену групу, щоб побачити її твірні та співвідношення:
 
 ```gap
 H:=SimplifiedFpGroup(Image(IsomorphismFpGroup(G)));
@@ -242,13 +239,12 @@ RelatorsOfFpGroup(H);
 ```
 
 ```output
-<fp group on the generators [ F1, F2, F3 ]>
 [ F1^3, F2^-1*F1^-1*F2*F1, F3^-1*F2^-1*F3*F2, F3^-1*F1^-1*F3*F1*F3^-1, F2^5,
-  F3^7 ]
+F3^7 ]
 ```
 
-Now we want to try larger groups, starting from order 106 (we check that
-the other group of order 105 possesses no such property)
+Тепер ми хочемо спробувати більші групи, починаючи з порядку 106 (ми перевіряємо,
+що інша група порядку 105 не має такої властивості)
 
 ```gap
 List(AllSmallGroups(105),AvgOrdOfGroup);
@@ -258,8 +254,8 @@ List(AllSmallGroups(105),AvgOrdOfGroup);
 [ 17, 301/5 ]
 ```
 
-With a little modification, we add an extra argument specifying the order from
-which to start:
+З невеликими змінами ми додаємо додатковий аргумент, який визначає порядок,
+з якого потрібно починати:
 
 ```gap
 TestRangeOfOrders:=function(f,n1,n2)
@@ -274,31 +270,31 @@ return fail;
 end;
 ```
 
-But now we call it with
+Але тепер ми викликаємо
 
 ```gap
 TestRangeOfOrders(TestOneGroup,106,256);
 ```
 
-and discover that testing 2328 groups of order 128 and additionally 56092 groups
-of order 256 already takes too long.
+і виявляємо, що тестування 2328 груп порядку 128 і додатково 56092
+груп порядку 256 вже займає занадто багато часу.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Don't panic!
+## Не панікувати!
 
-You can interrupt GAP by pressing Ctrl-C once. After that, GAP will enter
-a break loop, designated by the break prompt `brk>`. You can leave it by
-typing `quit;` (beware of pressing Ctrl-C twice within a second -- that will
-terminate GAP session completely).
+Ви можете перервати GAP, натиснувши Ctrl-C один раз. Після цього GAP увійде
+в цикл розриву, позначений підказкою розриву `brk>`. Ви можете вийти з нього,
+ввівши `quit;` (стережіться натискання Ctrl-C двічі протягом секунди – це
+повністю завершить сеанс GAP).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-This is another situation where theoretical knowledge helps much more than the
-brute-force approach. If the group is a _p_\-group, then the order of each
-conjugacy class of a non-identity element of the group is divisible by _p_;
-therefore, the average order of a group element may not be an integer. Therefore,
-_p_\-groups can be excluded from calculation. So, the new version of the code is
+Це ще одна ситуація, коли теоретичні знання допомагають набагато більше,
+ніж підхід грубої сили. Якщо група є _p_\-групою, то порядок кожного
+класу спряженості нетотожного елемента групи ділиться на _p_;
+отже, середній порядок елемента групи може не бути цілим числом. Тому
+_p_\-групи можна виключити з розрахунку. Отже, нова версія коду є
 
 ```gap
 TestRangeOfOrders:=function(f,n1,n2)
@@ -315,7 +311,7 @@ return fail;
 end;
 ```
 
-and using it we are able to discover a group of order 357 with the same property:
+і використовуючи його, ми можемо виявити групу порядку 357 з тією ж властивістю:
 
 ```gap
 gap> TestRangeOfOrders(TestOneGroup,106,512);
@@ -335,21 +331,20 @@ gap> TestRangeOfOrders(TestOneGroup,106,512);
 [ 357, 1 ]
 ```
 
-The next function shows even further flexibility: it is variadic, i.e.
-it may accept two or more arguments, the first two of which will be assigned to
-the variables `f` and `n`, and the rest of which will be available in the list `r`
-(this is indicated by `...` after `r`). The first argument is the testing
-function, the second is the order to check, and the third and the fourth
-are the numbers of the first and last groups of this order that should be
-checked. By default, the last two are equal to 1 and `NrSmallGroups(n)`
-respectively. This function also shows how to validate the input and
-produce user-friendly error messages in case of invalid arguments.
+Наступна функція демонструє ще більшу гнучкість: вона є варіативною, тобто
+вона може приймати два або більше аргументів, перші два з яких будуть призначені змінним `f` і `n`, а решта буде доступна в список `r`
+(це позначено `...` після `r`). Перший аргумент —
+функція перевірки, другий — порядок перевірки, третій і четвертий —
+номери першої та останньої груп цього порядку, які потрібно
+перевірити. За замовчуванням останні два дорівнюють 1 і `NrSmallGroups(n)`
+відповідно. Ця функція також показує, як перевірити вхідні дані
+та створювати зручні повідомлення про помилки у випадку неприпустимих аргументів.
 
-In addition, this function demonstrates how to use `Info` messages that
-may be switched on and off by setting appropriate `Info` level. The need
-we address here is to be able to switch the levels of verbosity of the
-output without error-prone approach of walking through the code and commenting
-`Print` statements in and out. It is achieved by creating an info class:
+Крім того, ця функція демонструє, як використовувати повідомлення `Info`,
+які можна вмикати та вимикати, встановивши відповідний рівень `Info`. Потреба,
+яку ми тут розглядаємо, полягає в тому, щоб мати можливість перемикати рівні багатослівності
+виводу без підходу, схильного до помилок, проходження коду та коментування
+інструкцій `Print`. Це досягається шляхом створення інформаційного класу:
 
 ```gap
 gap> InfoSmallGroupsSearch := NewInfoClass("InfoSmallGroupsSearch");
@@ -359,12 +354,12 @@ gap> InfoSmallGroupsSearch := NewInfoClass("InfoSmallGroupsSearch");
 InfoSmallGroupsSearch
 ```
 
-Now instead of `Print("something");` one could use
-`Info( InfoSmallGroupsSearch, infolevel, "something" );`
-where `infolevel` is a positive integer specifying the level of verbosity.
-This level could be changed to `n` using the command
-`SetInfoLevel( InfoSmallGroupsSearch, n);`. See actual calls of `Info` in
-the code below:
+Тепер замість `Print("something");` можна використовувати
+`Info( InfoSmallGroupsSearch, infolevel, "something");`,
+де `infolevel` є додатним цілим числом, що визначає рівень докладності.
+Цей рівень можна змінити на `n` за допомогою команди
+`SetInfoLevel( InfoSmallGroupsSearch, n);`. Перегляньте фактичні виклики `Info` у
+коді нижче:
 
 ```gap
 TestOneOrderVariadic := function(f,n,r...)
@@ -420,8 +415,8 @@ return fail;
 end;
 ```
 
-The following example demonstrates how the output may now be controlled
-by switching the info level for `InfoSmallGroupsSearch`:
+У наступному прикладі показано, як тепер можна керувати
+виводом, перемикаючи рівень інформації для `InfoSmallGroupsSearch`:
 
 ```output
 gap> TestOneOrderVariadic(IsIntegerAverageOrder,24);
@@ -440,12 +435,12 @@ gap> TestOneOrderVariadic(IsIntegerAverageOrder,357);
 [ 357, 1 ]
 ```
 
-Of course, this now introduces some complication for the test file,
-which compares the actual output with the reference output. To resolve
-this problem, we will decide to run the tests at info level 0 to suppress
-all additional outputs. Because the tests may have been started in the
-GAP session with a different info level, we will remember that info level
-to restore it after the test:
+Звичайно, тепер це вносить деякі ускладнення для тестового файлу,
+який порівнює фактичний вихід із еталонним виходом. Щоб вирішити
+цю проблему, ми вирішимо запустити тести на інформаційному рівні 0, щоб заблокувати
+всі додаткові виходи. Оскільки тести могли бути запущені в
+сеансі GAP з іншим рівнем інформації, ми запам’ятаємо цей рівень інформації,
+щоб відновити його після тесту:
 
 ```output
 # Finding groups with integer average order
@@ -467,26 +462,26 @@ gap> SetInfoLevel( InfoSmallGroupsSearch, INFO_SSS);
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Does the Small Groups Library contain another group with this property?
+## Чи містить бібліотека Small Groups Library іншу групу з цією властивістю?
 
-- What can you say about the order of the groups with this property?
+- Що Ви можете сказати про порядок груп із цією властивістю?
 
-- Can you estimate how long it may take to check all 408641062 groups of order 1536?
+- Чи можете Ви оцінити, скільки часу може зайняти перевірка всіх 408641062 груп порядку 1536?
 
-- How many groups of order not higher than 2000 might you be able to check,
-  excluding _p_\-groups and those of order 1536?
+- Скільки груп порядку не вище 2000 Ви могли б перевірити,
+  за винятком _p_\-груп і груп порядку 1536?
 
-- Can you find another group with this property in the Small Groups Library
-  (of order not equal to 1536)?
+- Чи можете Ви знайти іншу групу з цією властивістю в бібліотеці Small Groups Library
+  (порядок не дорівнює 1536)?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Organise the code into functions.
-- Create small groups one by one instead of producing a huge list of them.
-- Using `SmallGroupsInformation` may help to reduce the search space.
-- GAP is not a magic tool: theoretical knowledge may help much more than the brute-force approach.
+- Організуйте код у функції.
+- Створюйте малі групи одну за одною замість того, щоб створювати їх величезний список.
+- Використання `SmallGroupsInformation` може допомогти зменшити простір пошуку.
+- GAP не є чарівним інструментом: теоретичні знання можуть допомогти набагато більше, ніж підхід грубої сили.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
