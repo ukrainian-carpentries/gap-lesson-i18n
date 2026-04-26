@@ -255,13 +255,13 @@ Fibonacci(100);
 Сподіваємось, те, як функції називаються в GAP, допоможе вам запам’ятовувати або навіть вгадувати назви
 бібліотечних функцій. Якщо назва змінної складається з кількох слів,
 то перша літера кожного слова пишеться з великої літери (пам’ятайте, що GAP чутливий до регістру!).
-Further details on naming conventions used in GAP are documented
-[in the GAP manual here](https://docs.gap-system.org/doc/ref/chap5.html#X81F732457F7BC851).
-Functions with names in `ALL_CAPITAL_LETTERS` are internal functions not intended
-for general use. Use them with extreme care!
+Подальші відомості про правила іменування, які використовуються в GAP,
+задокументовані в посібнику GAP [тут](http://www.gap-system.org/Manuals/doc/ref/chap5.html#X81F732457F7BC851).
+Функції з назвами `У_ВЕРХНЬОМУ_РЕГІСТРІ` є внутрішніми функціями, не призначеними
+для загального використання.  Використовуйте їх з особливою обережністю!
 
-It is important to remember that GAP is case-sensitive. For example, the following
-input causes an error:
+Важливо пам’ятати, що GAP чутливий до регістру. Наприклад, наступне
+введення викликає помилку:
 
 ```gap
 factorial(100);
@@ -272,14 +272,14 @@ Error, Variable: 'factorial' must have a value
 not in any function at line 14 of *stdin*
 ```
 
-because the name of the GAP library function is `Factorial`. Using lowercase
-instead of uppercase or vice versa also affects name completion.
+тому що назва функції бібліотеки GAP – `Factorial`. Використання малих літер
+замість великих або навпаки також впливає на доповнення назви.
 
-Now let's consider the following problem: for a finite group _G_, calculate the
-average order of its elements (that is, the sum of orders of its elements divided
-by the order of the group). Where to start?
+Тепер давайте розглянемо таку задачу: для скінченної групи _G_ обчислити
+середній порядок її елементів (тобто суму порядків її елементів, поділену
+на порядок групи). З чого почати?
 
-Enter `?Group`, and you will see all help entries, starting with `Group`:
+Введіть `?Group`, і ви побачите всі записи довідкової системи, що починаються з `Group`:
 
 ```output
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -308,17 +308,15 @@ Enter `?Group`, and you will see all help entries, starting with `Group`:
 └─────────────── [ <Up>/<Down> select, <Return> show, q quit ] ────────────────┘
 ```
 
-You may use arrow keys to move up and down the list, and open help pages by
-pressing Return key. For this exercise, open `Tutorial: Groups and Homomorphisms`
-first. Note the navigation instructions at the bottom of the screen. Look at
-first two pages, then press `q` to return to the selection menu. Next, navigate to
-`Reference: Groups` and open it. Within two first pages you will find the
-function `Group` and mentioning of `Order`.
+Ви можете використовувати клавіші зі стрілками для переміщення вгору та вниз по списку, а також відкривати сторінки довідки,
+натискаючи клавішу Return. Для цієї вправи спочатку відкрийте `Tutorial: Groups and Homomorphisms`. Зверніть увагу на навігаційні інструкції внизу екрана. Перегляньте
+перші дві сторінки, потім натисніть `q`, щоб повернутися до меню вибору. Далі перейдіть до елементу
+`Reference: Groups` і відкрийте його. На перших двох сторінках ви знайдете
+функцію `Group` та згадку `Order`.
 
-GAP manual comes in several formats: text is good to view in a terminal,
-PDF is good for printing and HTML (especially with MathJax support) is
-very efficient for exploring with a browser. If you are running GAP on your
-own computer, you can set the help viewer to the default browser. If you are
+Посібник GAP доступний у кількох форматах: текстовий зручний для перегляду в терміналі,
+PDF зручний для друку, а HTML (особливо з підтримкою MathJax)
+дуже ефективний для перегляду за допомогою браузера. Якщо ви використовуєте GAP на власному комп’ютері, ви можете встановити для перегляду довідки браузер за замовчуванням. If you are
 running GAP on a remote machine, this (probably) will not work. (see
 `?WriteGapIniFile` on how to make this setting permanent):
 
