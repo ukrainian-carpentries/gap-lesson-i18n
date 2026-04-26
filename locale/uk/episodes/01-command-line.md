@@ -181,7 +181,7 @@ Display(m);
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Functions are also GAP objects
+## Функції також є об’єктами GAP
 
 Check what happens if you forget to add brackets,
 e.g. type `LogTo;` and `Factorial;`
@@ -189,7 +189,7 @@ We will explain the differences in these outputs later.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Here are some examples of calling other GAP functions:
+Нижче наведені декілька прикладів виклику інших функцій GAP:
 
 ```gap
 Factorial(100);
@@ -201,7 +201,7 @@ Factorial(100);
 7223758251185210916864000000000000000000000000
 ```
 
-(the exact width of output will depend on your terminal settings),
+(точна ширина виводу залежатиме від налаштувань вашого терміналу),
 
 ```gap
 Determinant(m);
@@ -211,7 +211,7 @@ Determinant(m);
 0
 ```
 
-and
+та
 
 ```gap
 Factors(2^64-1);
@@ -221,23 +221,23 @@ Factors(2^64-1);
 [ 3, 5, 17, 257, 641, 65537, 6700417 ]
 ```
 
-Functions may be combined in various ways, and may be
-used as arguments of other functions, for example, the
-`Filtered` function takes a list and a function, returning
-all elements of the list which satisfy the function.
-`IsEvenInt`, unsurprisingly, checks if an integer is even!
+Функції можна комбінувати різними способами та
+використовувати як аргументи інших функцій, наприклад,
+функція `Filtered` приймає список і функцію, повертаючи
+всі елементи списку, які задовольняють функцію.
+`IsEvenInt` ("Is Even Integer" з англ. "чи є ціле число парним"), як не дивно, перевіряє, чи є ціле число парним!
 
 ```gap
 Filtered( [2,9,6,3,4,5], IsEvenInt);
 ```
 
 ```output
-[ 2, 6, 4 ]
+
 ```
 
-A useful time-saving feature of the GAP command-line interfaces is completion
-of identifiers when the Tab key is pressed. For example, type `Fib` and then
-press the Tab key to complete the input to `Fibonacci`:
+Корисною функцією інтерфейсу командного рядка GAP, яка економить час, є заповнення
+ідентифікаторів під час натискання клавіші Tab.  Наприклад, введіть `Fib`, а потім
+натисніть клавішу Tab, щоб завершити введення `Fibonacci`:
 
 ```gap
 Fibonacci(100);
@@ -247,14 +247,14 @@ Fibonacci(100);
 354224848179261915075
 ```
 
-In the case that a unique completion is not possible, GAP will try to perform
-partial completion, and pressing the Tab key second time will display all possible
-completions of the identifier. Try, for example, to enter `GroupHomomorphismByImages`
-or `NaturalHomomorphismByNormalSubgroup` using completion.
+У випадку, якщо унікальне доповнення неможливе, GAP спробує виконати
+часткове доповнення, а натискання клавіші Tab вдруге відобразить усі можливі
+доповнення ідентифікатора. Спробуйте, наприклад, ввести `GroupHomomorphismByImages`
+або `NaturalHomomorphismByNormalSubgroup` за допомогою доповнення.
 
-The way functions are named in GAP will hopefully help you to memorise or even guess names
-of library functions. If a variable name consists of several words then the
-first letter of each word is capitalised (remember that GAP is case-sensitive!).
+Сподіваємось, те, як функції називаються в GAP, допоможе вам запам’ятовувати або навіть вгадувати назви
+бібліотечних функцій. Якщо назва змінної складається з кількох слів,
+то перша літера кожного слова пишеться з великої літери (пам’ятайте, що GAP чутливий до регістру!).
 Further details on naming conventions used in GAP are documented
 [in the GAP manual here](https://docs.gap-system.org/doc/ref/chap5.html#X81F732457F7BC851).
 Functions with names in `ALL_CAPITAL_LETTERS` are internal functions not intended
