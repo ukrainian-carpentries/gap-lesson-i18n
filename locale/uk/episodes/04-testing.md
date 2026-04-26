@@ -1,53 +1,53 @@
 ---
-title: Using regression tests
+title: Використання регресійних тестів
 teaching: 40
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Be able to create and run test files
-- Understand how test discrepancies and runtime regressions can be identified and interpreted
-- Understand how to adjust tests to check randomised algorithms
-- Learn the 'Make it right, then make it fast' concept
+- Вміти створювати та запускати тестові файли
+- Зрозуміти, як розбіжності тестів і регресії під час виконання можна ідентифікувати та інтерпретувати
+- Зрозуміти, як налаштувати тести для перевірки рандомізованих алгоритмів
+- Вивчити концепцію 'Зробіть спочатку правильно, а потім швидко
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Test-driven development
+- Тестова розробка
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The code of `AvgOrdOfGroup` is very simple, and nothing could possibly go wrong
-with it. By iterating over the group instead of creating a list of its elements,
-it avoids running out of memory
-(calling `AsList(SymmetricGroup(11))` already results in exceeding the permitted
-memory). That said, the computation still takes time, with several minutes
-needed to calculate the average order of an
-element of `SymmetricGroup(11)`. But at least we are confident that it is
-correct.
+Код `AvgOrdOfGroup` дуже простий, і з ним нічого не може піти
+не так. Перебираючи групу замість створення списку її елементів,
+це дозволяє уникнути нестачі пам'яті
+(виклик `AsList(SymmetricGroup(11))` вже призводить до перевищення дозволеної
+пам'яті). Тим не менш, обчислення все одно займає час, кілька хвилин
+необхідні для розрахунку середнього порядку
+елемента `SymmetricGroup(11)`. Але принаймні ми впевнені, що це
+правильно.
 
-Now we would like to write a better version of this function using some
-theoretical facts we know from Group Theory. We may put
-`avgord.g` under version control to revert changes if need be;
-we may create a new function to keep the old one around and compare the
-results of both; but this could be made even more efficient if we
-use **regression testing**: this is the term for testing based on
-rerunning previously completed tests to check that new changes do not
-impact their correctness or worsen their performance.
+Тепер ми хотіли б написати кращу версію цієї функції, використовуючи деякі теоретичні факти,
+відомі нам із теорії груп. Ми можемо поставити
+`avgord.g` під контроль версій, щоб скасувати зміни, якщо потрібно;
+ми можемо створити нову функцію, щоб зберегти стару версію й порівняти
+результати обох; але це можна зробити ще ефективнішим, якщо ми
+використаємо **regression testing**: це термін для тестування на основі
+повторних запусків раніше завершених тестів, щоб переконатися, що нові зміни не
+вплинуть на їх коректність або не погіршать їх роботу.
 
-To start with, we need to create a **test file**. The test file looks
-exactly like a GAP session, so it is easy to create it by copying and
-pasting a GAP session with all GAP prompts, inputs and outputs into a
-text file (a test file could be also created from a log file with a
-GAP session recorded with the help of `LogTo`). During the test, GAP will
-run all inputs from the test file, compare the outputs with those in the test
-file and report any differences.
+Для початку нам потрібно створити **тестовий файл**. Тестовий файл виглядає
+точно так само, як сеанс GAP, тому його легко створити, скопіювавши та
+вставивши сеанс GAP з усіма підказками, входами та виходами GAP у
+текстовий файл (тестовий файл також можна створити з файлу журналу із сеансом
+GAP, записаним за допомогою `LogTo`). Під час тестування GAP
+виконуватиме всі вхідні дані з тестового файлу, порівнюватиме результати з тими, що містяться в тестовому
+файлі, і повідомлятиме про будь-які відмінності.
 
-GAP test files are just text files, but the common practice is to name
-them with the extension `.tst`. Now create the file `avgord.tst` in the current directory (to
-avoid typing the full path) with the following content:
+Тестові файли GAP — це просто текстові файли, але загальноприйнятою практикою є назвати
+їх із розширенням `.tst`. Тепер створіть файл `avgord.tst` у поточному каталозі (щоб
+вводити повний шлях) з наступним вмістом:
 
 ```gap
 # tests for average order of a group element
@@ -59,16 +59,16 @@ gap> AvgOrdOfGroup(S);
 3291487/362880
 ```
 
-As you see, the test file may include comments, with certain rules specifying
-where they may be placed, because one should be able to distinguish comments
-in the test file from GAP output started with `#`. For that purpose,
-lines at the beginning of the test file that start with `#`, and one empty line
-together with one or more lines starting with `#`, are considered as comments.
-All other lines are interpreted as GAP output from the preceding GAP input.
+Як ви бачите, тестовий файл може включати коментарі з певними правилами,
+що визначають, де їх можна розміщувати, тому що потрібно мати можливість відрізнити
+коментарі в тестовому файлі від вихідних даних GAP, які починаються з `#`. З цією метою,
+рядки на початку тестового файлу, які починаються з `#`, і один порожній рядок
+разом з одним або декількома рядками, що починаються з `#`, вважаються коментарями.
+Усі інші рядки інтерпретуються як вихід GAP із попереднього введення GAP.
 
 To run the test, one should use the function `Test` (see
 [documentation](https://docs.gap-system.org/doc/ref/chap7.html#X87712F9D8732193C).
-For example (assuming that the function `AvgOrdOfGroup` is already loaded):
+Наприклад (за умови, що функція `AvgOrdOfGroup` вже завантажена):
 
 ```gap
 Test("avgord.tst");
@@ -78,17 +78,17 @@ Test("avgord.tst");
 true
 ```
 
-In this case, `Test` reported no discrepancies and returned `true`, so we
-conclude that the test has passed.
+У цьому випадку `Test` не повідомив про відсутність розбіжностей і повернув `true`, тому
+ми робимо висновок, що перевірку пройдено.
 
-We will not cover the topic of writing a good and comprehensive test suite here,
-nor will we cover the various options of the `Test` function, allowing us, for
-example, to ignore differences in the output formatting, or to display the progress
-of the test, as these are described in its documentation.
+Ми не розглядатимемо тут тему написання гарного та комплексного набору тестів,
+а також не будемо розглядати різні параметри функції `Test`, що дозволяє нам,
+наприклад, ігнорувати відмінності у форматуванні виводу або відображати хід виконання
+тесту, як це описано в його документації.
 
-Instead, we will now add more groups to `avgord.tst`, to demonstrate that the
-code also works with other kinds of groups, and to show various ways of
-combining commands in the test file:
+Замість цього ми додамо більше груп до `avgord.tst`, щоб продемонструвати,
+що код також працює з іншими типами груп, і показати різні способи
+поєднання команд у тестовому файлі:
 
 ```gap
 # tests for average order of a group element
@@ -101,7 +101,7 @@ gap> AvgOrdOfGroup(S);
 
 # pc group
 gap> D:=DihedralGroup(512);
-<pc group of size 512 with 9 generators>
+
 gap> AvgOrdOfGroup(D);
 44203/512
 gap> G:=TrivialGroup();; # suppress output
@@ -110,9 +110,9 @@ gap> AvgOrdOfGroup(G);
 
 # fp group
 gap> F:=FreeGroup("a","b");
-<free group on the generators [ a, b ]>
+
 gap> G:=F/ParseRelators(GeneratorsOfGroup(F),"a^8=b^2=1, b^-1ab=a^-1");
-<fp group on the generators [ a, b ]>
+
 gap> IsFinite(G);
 true
 gap> AvgOrdOfGroup(G);
@@ -127,7 +127,7 @@ gap> AvgOrdOfGroup(SL(2,5));
 221/40
 ```
 
-Let us test the extended version of the test again and check that it works:
+Давайте ще раз протестуємо розширену версію тесту та перевіримо, чи вона працює:
 
 ```gap
 Test("avgord.tst");
@@ -137,11 +137,9 @@ Test("avgord.tst");
 true
 ```
 
-Now we will work on a better implementation. Of course, the order of an element
-is an invariant of a conjugacy class of elements of a group, so we need only to
-know the orders of conjugacy classes of elements and their representatives. The
-following code, which we add into `avgord.g`, reads into GAP and redefines
-`AvgOrdOfGroup` without any syntax errors:
+Зараз ми будемо працювати над кращою реалізацією. Звичайно, порядок елемента
+є інваріантом класу спряженості елементів групи, тому нам потрібно лише знати порядки класів спряженості елементів та їх представників. Наступний код, який ми додаємо до `avgord.g`, зчитує GAP і перевизначає
+`AvgOrdOfGroup` без синтаксичних помилок:
 
 ```gap
 AvgOrdOfGroup := function(G)
@@ -155,7 +153,7 @@ return sum/Size(G);
 end;
 ```
 
-but when we run the test, here comes a surprise!
+але коли ми запускаємо тест, ось сюрприз!
 
 ```gap
 Read("avgord.g");
@@ -198,8 +196,8 @@ AvgOrdOfGroup(SL(2,5));
 false
 ```
 
-Indeed, we made a typo (deliberately) and replaced `Size(c)` by `Size(cc)`.
-The correct version of course should look as follows:
+Дійсно, ми допустили помилку (навмисно) і замінили `Size(c)` на `Size(cc)`.
+Правильний варіант курсу має виглядати так:
 
 ```gap
 AvgOrdOfGroup := function(G)
@@ -213,8 +211,8 @@ return sum/Size(G);
 end;
 ```
 
-Now we will fix this in `avgord.g`, and read and test it again to check that
-the tests run correctly.
+Тепер ми виправимо це в `avgord.g`, прочитаємо та протестуємо його знову, щоб перевірити,
+чи тести виконуються правильно.
 
 ```gap
 Read("avgord.g");
@@ -225,14 +223,14 @@ Test("avgord.tst");
 true
 ```
 
-Thus, the approach 'Make it right, then make it fast' helped detect a bug
-immediately after it has been introduced.
+Таким чином, підхід «Зробіть спочатку правильно, а потім швидко» допоміг виявити помилку
+відразу після її появи.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- It is easy to create a test file by copying and pasting a GAP session.
-- Writing a good and comprehensive test suite requires some effort.
-- Make it right, then make it fast!
+- Легко створити тестовий файл, скопіювавши та вставивши сеанс GAP.
+- Написання хорошого та комплексного набору тестів вимагає певних зусиль.
+- Зробіть спочатку правильно, а потім швидко!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
