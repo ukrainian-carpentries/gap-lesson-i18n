@@ -2,7 +2,7 @@
 permalink: /reference/
 ---
 
-## [First session with GAP]({% link \_episodes/01-command-line.md %})
+## [Перша сесія з GAP]({% link \_episodes/01-command-line.md %})
 
 - [Підручник з GAP: Перше заняття з GAP](http://www.gap-system.org/Manuals/doc/tut/chap2.html)
 
@@ -16,7 +16,7 @@ permalink: /reference/
 
 - [Довідковий посібник GAP: Мова програмування](http://www.gap-system.org/Manuals/doc/ref/chap4.html#X7FE7C0C17E1ED118)
 
-## [Some more GAP objects]({% link \_episodes/02-some-objects.md %})
+## [Ще декілька об’єктів GAP]({% link \_episodes/02-some-objects.md %})
 
 - [Цілі числа](http://www.gap-system.org/Manuals/doc/ref/chap14.html)
 
@@ -36,19 +36,19 @@ permalink: /reference/
 
 - [Рядки та символи](http://www.gap-system.org/Manuals/doc/ref/chap27.html)
 
-## [Functions in GAP]({% link \_episodes/03-func.md %})
+## [Функції в GAP]({% link \_episodes/03-func.md %})
 
 - [Підручник з GAP: Функції](http://www.gap-system.org/Manuals/doc/tut/chap4.html)
 
-## [Using regression tests]({% link \_episodes/04-testing.md %})
+## [Використання регресійних тестів]({% link \_episodes/04-testing.md %})
 
 - [Довідковий посібник GAP: Тест](http://www.gap-system.org/Manuals/doc/ref/chap7.html#X87712F9D8732193C)
 
-## [Small groups search]({% link \_episodes/05-small-groups.md %})
+## [Пошук малих груп]({% link \_episodes/05-small-groups.md %})
 
 - [Довідковий посібник GAP: Бібліотеки груп](http://www.gap-system.org/Manuals/doc/ref/chap50.html)
 
-## [Attributes and Methods]({% link \_episodes/06-attributes.md %})
+## [Атрибути та методи]({% link \_episodes/06-attributes.md %})
 
 - [Підручник з GAP: Операції та методи](http://www.gap-system.org/Manuals/doc/tut/chap8.html)
 
