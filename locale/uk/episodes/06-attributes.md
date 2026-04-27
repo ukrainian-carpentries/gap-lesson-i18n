@@ -220,22 +220,22 @@ l:=List([1..1000],i->SmallGroup(1536,i));; List(l,AvgOrdOfCollection);;time;
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Don't panic!
+## Не панікуйте!
 
-- Install a method for `IsPcGroup` that iterates over the group elements
-  instead of calculations its conjugacy classes.
+- Установіть метод для `IsPcGroup`, який повторює елементи групи
+  замість обчислень її класів спряженості.
 
-- Estimate practical boundaries of its feasibility. Can you find an example
-  of a pc group where iterating is slower than calculating conjugacy classes?
+- Оцініть практичні межі його можливості.  Чи можете ви знайти приклад
+  pc групи, де ітерація повільніша, ніж обчислення класів спряженості?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- _Positional_ objects may accumulate information about themselves during their lifetime.
-- This means that next time the stored information may be retrieved at zero cost.
-- _Methods_ are bunches of functions; GAP's _method selection_ will choose the most efficient method based on the type of all arguments.
-- 'No-method-found' is a special kind of error with useful debugging tools helping to understand it.
+- _Позиційні_ об'єкти можуть накопичувати інформацію про себе протягом життя.
+- Це означає, що наступного разу збережену інформацію можна буде відновити без жодних витрат.
+- _Методи_ — це групи функцій; _Вибір методів_ GAP вибере найефективніший метод на основі типу всіх аргументів.
+- 'Метод не знайдено' — це особливий вид помилки з корисними інструментами налагодження, які допомагають її зрозуміти.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
