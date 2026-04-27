@@ -23,18 +23,18 @@ permalink: /setup/
 сценарій, який створить більшість пакетів, які потребують компіляції
 (за умови наявності достатньої кількості бібліотек, заголовків і інструментів).
 
-Alternatively, you may also install GAP using [Homebrew](https://brew.sh/).
-After installing Homebrew, follow the instructions for the
+Крім того, ви також можете встановити GAP за допомогою [Homebrew](http://brew.sh/).
+Після встановлення Homebrew дотримуйтесь інструкцій для
 [GAP Homebrew tap](https://github.com/gap-system/homebrew-gap).
 
 ## Linux
 
-On Linux, you need to install GAP from source as explained at the
-[GAP Downloads page](https://www.gap-system.org/Releases/).
-Download one of the archives provided there, unpack it and run
-`./configure && make` in the unpacked directory. Then change to the
-`pkg` subdirectory and call `../bin/BuildPackages.sh` to run the
-script which will build most of the packages that require compilation
-(provided sufficiently many libraries, headers and tools are available).
+У Linux вам потрібно встановити GAP із джерела, як описано на
+[сторінці завантажень GAP](http://www.gap-system.org/Releases/).
+Завантажте один із наданих там архівів, розпакуйте його та запустіть
+`./configure && make` у розпакованому каталозі. Потім перейдіть
+до підкаталогу `pkg` і викличте `../bin/BuildPackages.sh`, щоб запустити
+сценарій, який створить більшість пакетів, які потребують компіляції
+(за умови наявності достатньої кількості бібліотек, заголовків і інструментів).
 
 
