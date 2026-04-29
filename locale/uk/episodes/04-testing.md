@@ -101,7 +101,7 @@ gap> AvgOrdOfGroup(S);
 
 # pc group
 gap> D:=DihedralGroup(512);
-
+<pc group of size 512 with 9 generators>
 gap> AvgOrdOfGroup(D);
 44203/512
 gap> G:=TrivialGroup();; # suppress output
@@ -110,9 +110,9 @@ gap> AvgOrdOfGroup(G);
 
 # fp group
 gap> F:=FreeGroup("a","b");
-
+<free group on the generators [ a, b ]>
 gap> G:=F/ParseRelators(GeneratorsOfGroup(F),"a^8=b^2=1, b^-1ab=a^-1");
-
+<fp group on the generators [ a, b ]>
 gap> IsFinite(G);
 true
 gap> AvgOrdOfGroup(G);
