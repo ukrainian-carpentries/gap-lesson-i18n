@@ -67,7 +67,7 @@ gap> AvgOrdOfGroup(S);
 Усі інші рядки інтерпретуються як вихід GAP із попереднього введення GAP.
 
 Щоб запустити тест, слід використовувати функцію `Test`, як описано в документації
-[тут](http://www.gap-system.org/Manuals/doc/ref/chap7.html#X87712F9D8732193C).
+[тут](https://www.gap-system.org/Manuals/doc/ref/chap7.html#X87712F9D8732193C).
 Наприклад (за умови, що функція `AvgOrdOfGroup` вже завантажена):
 
 ```gap
