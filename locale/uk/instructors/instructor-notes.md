@@ -74,10 +74,10 @@ permalink: /guide/
 - Стережіться цього `w:="supercalifragilisticexpialidocious"; IsSubset(w,'s');` призводить до помилки методу не знайдено. Це може бути вдалим моментом для представлення
   цього особливого виду повідомлень про помилки.
 
-- Щоб розширити GAP за допомогою нових типів об’єктів, зверніться до [Створення нових об'єктів](http://www.gap-system.org/Manuals/doc/ref/chap79.html)
-  та [Приклади розширення системи](http://www.gap-system.org/Manuals/doc/ref/chap80.html)
+- Щоб розширити GAP за допомогою нових типів об’єктів, зверніться до [Створення нових об'єктів](https://www.gap-system.org/Manuals/doc/ref/chap79.html)
+  та [Приклади розширення системи](https://www.gap-system.org/Manuals/doc/ref/chap80.html)
   з довідкового посібника GAP.
-  Також [пакет Circle](http://www.gap-system.org/Packages/circle.html)
+  Також [пакет Circle](https://www.gap-system.org/Packages/circle.html)
   надає приклад розширення GAP новими мультиплікативними об’єктами.
 
 1. Розв'язання завдання: `r:=c[1]; for i in [2..Length(c)] do if c[i][2]>r[2] then r:=c[i]; fi; od; r;`
