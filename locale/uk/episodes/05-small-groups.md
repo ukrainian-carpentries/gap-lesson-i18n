@@ -22,7 +22,7 @@ exercises: 15
 властивістю, а саме, що середній порядок їхніх елементів є цілим числом.
 
 Дистрибутив GAP включає низку бібліотек даних (див. огляд
-[here](https://www.gap-system.org/Datalib/datalib.html)).
+[тут](https://www.gap-system.org/Datalib/datalib.html)).
 Однією з них є
 [Small Groups Library](https://www.gap-system.org/Packages/sgl.html) Ганса Ульріха Беше, Беттіни Айк та Імона О'Брайена.
 
