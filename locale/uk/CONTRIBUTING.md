@@ -11,89 +11,52 @@ Carpentry][dc-site], та [Library Carpentry][lc-site]) є проєктами з
 
 Найпростіший спосіб почати - це повідомити про помилку, незрозуміле формулювання чи фактичну помилку. Це чудова можливість представити себе та познайомитися з нашою спільнотою.
 
-1. If you do not have a [GitHub][github] account, you can [send us comments by
-   email][contact]. However, we will be able to respond more quickly if you use
-   one of the other methods described below.
+1. Якщо у вас немає облікового запису [GitHub][github], ви можете [надіслати нам коментарі електронною поштою][contact]. Однак, ми зможемо відповісти швидше, якщо ви скористаєтеся одним з інших способів, описаних нижче.
 
-2. If you have a [GitHub][github] account, or are willing to [create
-   one][github-join], but do not know how to use Git, you can report problems
-   or suggest improvements by [creating an issue][repo-issues]. This allows us
-   to assign the item to someone and to respond to it in a threaded discussion.
+2. Якщо у вас є обліковий запис [GitHub][github], або ви хочете [його створити][github-join] у майбутньому, але поки ще не знайомі з використанням Git, ви можете повідомити про проблеми або запропонувати покращення [створивши запит][repo-issues]. Це дозволяє нам призначити комусь цей запит і відповісти на нього після обговорення.
 
-3. If you are comfortable with Git, and would like to add or change material,
-   you can submit a pull request (PR). Instructions for doing this are
-   [included below](#using-github). For inspiration about changes that need to
-   be made, check out the [list of open issues][issues] across the Carpentries.
+3. Якщо ви впевнено використовуєте Git, і бажаєте внести свій внесок, додавши або змінивши матеріал, ви можете подати запит на зміни (англ. pull request, PR). Інструкції, як це зробити, [наведені нижче](#using-github). Для пошуку ідей щодо потенційних внесків дивіться [перелік відкритих питань][issues] в інших матеріалах від Carpentries.
 
-Note: if you want to build the website locally, please refer to [The Workbench
-documentation][template-doc].
+Примітка: щоб побудувати локальну версію вебсайту, зверніться до [документації Workbench][template-doc].
 
-### Where to Contribute
+### Де робити внески
 
-1. If you wish to change this lesson, add issues and pull requests here.
-2. If you wish to change the template used for workshop websites, please refer
-   to [The Workbench documentation][template-doc].
+1. Якщо ви бажаєте змінити цей урок, ви можете запропонувати покращення [створивши запит у цьому репозиторії][repo-issues].
+2. Якщо ви бажаєте змінити шаблон уроку, будь ласка, зверніться до [документації Workbench][template-doc].
 
-### What to Contribute
+### Які внески робити
 
-There are many ways to contribute, from writing new exercises and improving
-existing ones to updating or filling in the documentation and submitting [bug
-reports][issues] about things that do not work, are not clear, or are missing.
-If you are looking for ideas, please see [the list of issues for this
-repository][repo-issues], or the issues for [Data Carpentry][dc-issues],
-[Library Carpentry][lc-issues], and [Software Carpentry][swc-issues] projects.
+Існує багато способів зробити свій внесок: написання нових вправ чи покращення наявних, оновлення або додавання документації, подання [звітів про помилки][issues] щодо незрозумілого, відсутнього або несправного вмісту.
+Для пошуку ідей щодо потенційних внесків перегляньте [перелік проблем для цього репозиторію][repo-issues], або проблеми для проєктів [Data Carpentry][dc-issues], [Library Carpentry][lc-issues] та [Software Carpentry][swc-issues].
 
-Comments on issues and reviews of pull requests are just as welcome: we are
-smarter together than we are on our own. **Reviews from novices and newcomers
-are particularly valuable**: it's easy for people who have been using these
-lessons for a while to forget how impenetrable some of this material can be, so
-fresh eyes are always welcome.
+Також вітаються коментарі щодо проблем та рецензування запитів на зміни (тобто, pull requests): разом ми розумніші, ніж поодинці. **Особливо цінні відгуки від початківців**: ті, хто знайомий з цими уроками, можуть не помітити, наскільки складним може бути матеріал для початківців, що робить свіжі погляди неймовірно цінними.
 
-### What _Not_ to Contribute
+### Які внески не слід робити
 
-Our lessons already contain more material than we can cover in a typical
-workshop, so we are usually _not_ looking for more concepts or tools to add to
-them. As a rule, if you want to introduce a new idea, you must (a) estimate how
-long it will take to teach and (b) explain what you would take out to make room
-for it. The first encourages contributors to be honest about requirements; the
-second, to think hard about priorities.
+Наші уроки вже містять більше матеріалу, ніж ми можемо охопити на типовому семінарі, тому ми зазвичай не додаємо до уроків пояснення додаткових понять чи використання додаткових інструментів. Як правило, якщо ви бажаєте представити нову ідею, ви повинні: (а) визначити скільки часу знадобиться для її викладання і (б) вказати, який наявний вміст потрібно видалити, щоб звільнити місце для цього. Перша вказівка ​​заохочує учасників до прозорості щодо необхідного часу; друга спонукає їх ретельно оцінювати пріоритети.
 
-We are also not looking for exercises or other material that only run on one
-platform. Our workshops typically contain a mixture of Windows, macOS, and
-Linux users; in order to be usable, our lessons must run equally well on all
-three.
+Крім того, ми не шукаємо завдання чи інші матеріали, які працюють лише на одній платформі. На наших семінарах зазвичай присутні користувачі Windows, macOS та Linux. Тому наші семінари мають бути розроблені так, щоб однаково добре працювати на всіх трьох платформах.
 
-### Using GitHub
+### Використання GitHub
 
-If you choose to contribute via GitHub, you may want to look at [How to
-Contribute to an Open Source Project on GitHub][how-contribute]. In brief, we
-use [GitHub flow][github-flow] to manage changes:
+Якщо ви вирішили зробити свій внесок через GitHub, вам варто ознайомитися зі статтею [Як зробити внесок у проєкт з відкритим вихідним кодом на GitHub][how-contribute]. Ми використовуємо [GitHub flow][github-flow] для керування змінами:
 
-1. Create a new branch in your desktop copy of this repository for each
-   significant change.
-2. Commit the change in that branch.
-3. Push that branch to your fork of this repository on GitHub.
-4. Submit a pull request from that branch to the [upstream repository][repo].
-5. If you receive feedback, make changes on your desktop and push to your
-   branch on GitHub: the pull request will update automatically.
+1. Створіть окрему гілку у вашій локальній копії цього репозиторію для кожної суттєвої зміни.
+2. Збережіть зміни у комітах до цієї гілки.
+3. Надішліть (використовуючи `git push` з відповідними аргументами) цю гілку до вашого відгалуження (fork) головного репозиторію на GitHub.
+4. Створіть запит на приєднання цієї гілки до [головного репозиторію][repo].
+5. Якщо надано відгук, спочатку внесіть необхідні зміни до вашої локальної копії репозиторію, а потім надішліть їх до вашої гілки на GitHub: при цьому запит на зміни оновиться автоматично.
 
-NB: The published copy of the lesson is usually in the `main` branch.
+Примітка: опублікована копія уроку зазвичай знаходиться в гілці `main`.
 
-Each lesson has a team of maintainers who review issues and pull requests or
-encourage others to do so. The maintainers are community volunteers, and have
-final say over what gets merged into the lesson.
+За кожний урок відповідає команда супровідників, які переглядають проблеми та запити на зміни або делегують процес перегляду іншим. Супровідники є волонтерами спільноти і приймають остаточне рішення щодо того, що буде додано до уроку.
 
-### Other Resources
+### Інші ресурси
 
-The Carpentries is a global organisation with volunteers and learners all over
-the world. We share values of inclusivity and a passion for sharing knowledge,
-teaching and learning. There are several ways to connect with The Carpentries
-community listed at \<https\://carpentries.org/connect/> including via social
-media, slack, newsletters, and email lists. You can also [reach us by
-email][contact].
+The Carpentries - це всесвітня організація, яка поєднує волонтерів та учнів з усього світу. Ми маємо спільні цінності інклюзивності та пристрасті до обміну знаннями, викладання та навчання. Існують різні способи для звʼязку зі спільнотою Carpentries, зокрема через соціальні мережі, Slack, інформаційні бюлетені та списки електронної пошти, усі вони перераховані за адресою \<https\://carpentries.org/connect/>. Ви також можете [зв'язатися з нами електронною поштою][contact].
 
-[repo]: https://example.com/FIXME
-[repo-issues]: https://example.com/FIXME/issues
+[repo]: https://github.com/ukrainian-carpentries/gap-lesson
+[repo-issues]: https://github.com/ukrainian-carpentries/gap-lesson/issues
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
