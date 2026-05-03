@@ -1,24 +1,15 @@
-## Contributing
+## Внески до проєкту
 
 [The Carpentries][cp-site] ([Software Carpentry][swc-site], [Data
-Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source
-projects, and we welcome contributions of all kinds: new lessons, fixes to
-existing material, bug reports, and reviews of proposed changes are all
-welcome.
+Carpentry][dc-site], та [Library Carpentry][lc-site]) є проєктами з відкритим вихідним кодом. Заохочуються будь-які внески: нові уроки, виправлення поточного матеріалу, повідомлення про помилки, та рецензування запропонованих змін.
 
-### Contributor Agreement
+### Угода про участь у проєкті
 
-By contributing, you agree that we may redistribute your work under our
-license. In exchange, we will address your issues and/or assess
-your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [The Carpentries][cp-site] agrees to abide by
-our [code of conduct](CODE_OF_CONDUCT.md).
+Роблячи свій внесок, ви погоджуєтеся, що ми можемо розповсюджувати ваші роботи згідно з [нашою ліцензією](LICENSE.md). У свою чергу, ми негайно розглянемо ваші зауваження та/або оцінимо запропоновані вами зміни, і допоможемо вам приєднатися до нашої спільноти. Кожен, хто бере участь у [The Carpentries][cp-site] погоджується дотримуватися нашого [кодексу поведінки](CODE_OF_CONDUCT.md).
 
-### How to Contribute
+### Як зробити внесок
 
-The easiest way to get started is to file an issue to tell us about a spelling
-mistake, some awkward wording, or a factual error. This is a good way to
-introduce yourself and to meet some of our community members.
+Найпростіший спосіб почати - це повідомити про помилку, незрозуміле формулювання чи фактичну помилку. Це чудова можливість представити себе та познайомитися з нашою спільнотою.
 
 1. If you do not have a [GitHub][github] account, you can [send us comments by
    email][contact]. However, we will be able to respond more quickly if you use
