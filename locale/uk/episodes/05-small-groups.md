@@ -22,9 +22,9 @@ exercises: 15
 властивістю, а саме, що середній порядок їхніх елементів є цілим числом.
 
 Дистрибутив GAP включає низку бібліотек даних (див. огляд
-[here](http://www.gap-system.org/Datalib/datalib.html)).
+[here](https://www.gap-system.org/Datalib/datalib.html)).
 Однією з них є
-[Small Groups Library](http://www.gap-system.org/Packages/sgl.html) Ганса Ульріха Беше, Беттіни Айк та Імона О'Брайена.
+[Small Groups Library](https://www.gap-system.org/Packages/sgl.html) Ганса Ульріха Беше, Беттіни Айк та Імона О'Брайена.
 
 Ця бібліотека надає різні утиліти для визначення того, яка інформація
 там зберігається, і надсилання запитів для пошуку груп із потрібними
@@ -219,7 +219,7 @@ TestAllOrders(TestOneGroup,128);
 ```
 
 Щоб дослідити її далі, ми можемо отримати її `StructureDescription` (див.
-[тут](http://www.gap-system.org/Manuals/doc/ref/chap39.html#X87BF1B887C91CA2E)
+[тут](https://www.gap-system.org/Manuals/doc/ref/chap39.html#X87BF1B887C91CA2E)
 для пояснення нотації, яку використано):
 
 ```gap
