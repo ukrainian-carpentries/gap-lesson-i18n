@@ -4,55 +4,55 @@ permalink: /reference/
 
 ## [Перша сесія з GAP]({% link \_episodes/01-command-line.md %})
 
-- [Підручник з GAP: Перше заняття з GAP](https://www.gap-system.org/Manuals/doc/tut/chap2.html)
+- [Підручник з GAP: Перша сесія з GAP](https://docs.gap-system.org/doc/tut/chap2.html)
 
-- [Довідковий посібник GAP: Конвенції про найменування](https://plus.google.com/events/cfm3tc375c142qtodvlvcfs82l4)
+- [Довідковий посібник GAP: Конвенції про найменування](https://docs.gap-system.org/doc/ref/chap5.html#X81F732457F7BC851)
 
-- [Довідковий посібник GAP: Довідкова система](https://www.gap-system.org/Manuals/doc/ref/chap2.html)
+- [Довідковий посібник GAP: Довідкова система](https://docs.gap-system.org/doc/ref/chap2.html)
 
-- [Підручник з GAP: Списки та записи](https://www.gap-system.org/Manuals/doc/tut/chap3.htm)
+- [Підручник з GAP: Списки та записи](https://docs.gap-system.org/doc/tut/chap3.html)
 
-- [Довідковий посібник GAP: Рядки та символи](https://www.gap-system.org/Manuals/doc/ref/chap27.html)
+- [Довідковий посібник GAP: Рядки та символи](https://docs.gap-system.org/doc/ref/chap27.html)
 
-- [Довідковий посібник GAP: Мова програмування](https://www.gap-system.org/Manuals/doc/ref/chap4.html#X7FE7C0C17E1ED118)
+- [Довідковий посібник GAP: Мова програмування](https://docs.gap-system.org/doc/ref/chap4.html#X7FE7C0C17E1ED118)
 
-## [Ще декілька об’єктів GAP]({% link \_episodes/02-some-objects.md %})
+## [Ще декілька типів об’єктів GAP]({% link \_episodes/02-some-objects.md %})
 
-- [Цілі числа](https://www.gap-system.org/Manuals/doc/ref/chap14.html)
+- [Цілі числа](https://docs.gap-system.org/doc/ref/chap14.html)
 
-- [Раціональні числа](https://www.gap-system.org/Manuals/doc/ref/chap17.html)
+- [Раціональні числа](https://docs.gap-system.org/doc/ref/chap17.html)
 
-- [Циклотомічні числа](https://www.gap-system.org/Manuals/doc/ref/chap18.html)
+- [Циклотомічні числа](https://docs.gap-system.org/doc/ref/chap18.html)
 
-- [Числа з рухомою комою](https://www.gap-system.org/Manuals/doc/ref/chap19.html)
+- [Числа з рухомою комою](https://docs.gap-system.org/doc/ref/chap19.html)
 
-- [Елементи скінченного поля](https://www.gap-system.org/Manuals/doc/ref/chap59.html)
+- [Елементи скінченного поля](https://docs.gap-system.org/doc/ref/chap59.html)
 
-- [Перестановки](https://www.gap-system.org/Manuals/doc/ref/chap42.html)
+- [Перестановки](https://docs.gap-system.org/doc/ref/chap42.html)
 
-- [Списки](https://www.gap-system.org/Manuals/doc/ref/chap21.html)
+- [Списки](https://docs.gap-system.org/doc/ref/chap21.html)
 
-- [Записи](https://www.gap-system.org/Manuals/doc/ref/chap29.html)
+- [Записи](https://docs.gap-system.org/doc/ref/chap29.html)
 
-- [Рядки та символи](https://www.gap-system.org/Manuals/doc/ref/chap27.html)
+- [Рядки та символи](https://docs.gap-system.org/doc/ref/chap27.html)
 
 ## [Функції в GAP]({% link \_episodes/03-func.md %})
 
-- [Підручник з GAP: Функції](https://www.gap-system.org/Manuals/doc/tut/chap4.html)
+- [Підручник з GAP: Функції](https://docs.gap-system.org/doc/tut/chap4.html)
 
 ## [Використання регресійних тестів]({% link \_episodes/04-testing.md %})
 
-- [Довідковий посібник GAP: Тест](https://www.gap-system.org/Manuals/doc/ref/chap7.html#X87712F9D8732193C)
+- [Довідковий посібник GAP: Test](https://docs.gap-system.org/doc/ref/chap7.html#X87712F9D8732193C)
 
-## [Пошук малих груп]({% link \_episodes/05-small-groups.md %})
+## [Пошук груп малих порядків]({% link \_episodes/05-small-groups.md %})
 
-- [Довідковий посібник GAP: Бібліотеки груп](https://www.gap-system.org/Manuals/doc/ref/chap50.html)
+- [Довідковий посібник GAP: Бібліотеки груп](https://docs.gap-system.org/doc/ref/chap50.html)
 
 ## [Атрибути та методи]({% link \_episodes/06-attributes.md %})
 
-- [Підручник з GAP: Операції та методи](https://www.gap-system.org/Manuals/doc/tut/chap8.html)
+- [Підручник з GAP: Операції та методи](https://docs.gap-system.org/doc/tut/chap8.html)
 
-- [Підручник з GAP: Операції та методи](https://www.gap-system.org/Manuals/doc/tut/chap8.html)
+- [Довідковий посібник з GAP: Додавання нового атрибута](https://docs.gap-system.org/doc/ref/chap80.html#X874AF11D864AEC1B)
 
 ## Словник
 
