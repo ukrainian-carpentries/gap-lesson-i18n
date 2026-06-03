@@ -24,9 +24,9 @@ permalink: /reference/
 
 - [Циклотомічні числа](https://docs.gap-system.org/doc/ref/chap18.html)
 
-- [Числа з рухомою комою](https://docs.gap-system.org/doc/ref/chap19.html)
+- [Числа з плаваючою комою](https://docs.gap-system.org/doc/ref/chap19.html)
 
-- [Елементи скінченного поля](https://docs.gap-system.org/doc/ref/chap59.html)
+- [Елементи скінченних полів](https://docs.gap-system.org/doc/ref/chap59.html)
 
 - [Перестановки](https://docs.gap-system.org/doc/ref/chap42.html)
 
@@ -72,7 +72,7 @@ permalink: /reference/
 метод, який буде використано, залежить від типу аргументів).
 
 Властивість
-:    Атрибут з логічним значенням
+:    Атрибут з булевим значенням
 
 Запис
 :    Структура даних, яка є набором _компонентів_, кожен з яких має унікальні
