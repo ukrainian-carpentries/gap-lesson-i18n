@@ -39,7 +39,7 @@ title: "Ліцензії"
 ## Торговельна марка
 
 "The Carpentries", "Software Carpentry", "Data Carpentry", "Library
-Carpentry" та їхні відповідні логотипи є зареєстрованими торговими марками [Community
+Carpentry" та їхні відповідні логотипи є зареєстрованими торговельними марками [Community
 Initiatives][ci].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
