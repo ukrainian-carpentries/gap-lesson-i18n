@@ -21,18 +21,20 @@ exercises: 10
 Якщо GAP встановлено правильно, ви повинні мати можливість його запустити. Як саме це зробити, залежатиме від вашої операційної системи та способу встановлення GAP. Після запуску, GAP виведе на екран свій _банер_, який відображає інформацію про версію системи та завантажені компоненти, а потім запрошення командного рядка `gap>`, наприклад:
 
 ```output
- ┌───────┐   GAP 4.9.2 of 04-Jul-2018
+ ┌───────┐   GAP 4.15.1 of 2025-10-18
  │  GAP  │   https://www.gap-system.org
- └───────┘   Architecture: x86_64-apple-darwin16.7.0-default64
- Configuration:  gmp 6.1.2, readline
+ └───────┘   Architecture: aarch64-apple-darwin25-default64-kv10
+ Configuration:  gmp 6.3.0, GASMAN, readline
  Loading the library and packages ...
- Packages:   AClib 1.3, Alnuth 3.1.0, AtlasRep 1.5.1, AutPGrp 1.9,
-             Browse 1.8.8, CRISP 1.4.4, Cryst 4.1.17, CrystCat 1.1.8,
-             CTblLib 1.2.2, FactInt 1.6.2, FGA 1.4.0, GAPDoc 1.6.1, IO 4.5.1,
-             IRREDSOL 1.4, LAGUNA 3.9.0, Polenta 1.3.8, Polycyclic 2.14,
-             PrimGrp 3.3.1, RadiRoot 2.8, ResClasses 4.7.1, SmallGrp 1.3,
-             Sophus 1.24, SpinSym 1.5, TomLib 1.2.6, TransGrp 2.0.2,
-             utils 0.54
+ Packages:   AClib 1.3.3, Alnuth 3.2.1, AtlasRep 2.1.9, AutoDoc 2025.10.16, 
+             AutPGrp 1.11.1, Browse 1.8.21, CaratInterface 2.3.7, CRISP 1.4.8, 
+             Cryst 4.1.30, CrystCat 1.1.10, CTblLib 1.3.11, 
+             curlInterface 2.4.2, FactInt 1.6.3, FGA 1.5.0, Forms 1.2.13, 
+             GAPDoc 1.6.7, genss 1.6.9, IO 4.9.3, IRREDSOL 1.4.4, 
+             LAGUNA 3.9.7, orb 5.0.1, PackageManager 1.6.3, Polenta 1.3.11, 
+             Polycyclic 2.17, PrimGrp 4.0.1, RadiRoot 2.9, recog 1.4.4, 
+             ResClasses 4.7.4, SmallGrp 1.5.4, Sophus 1.27, SpinSym 1.5.2, 
+             StandardFF 1.0, TomLib 1.2.11, TransGrp 3.6.5, utils 0.92
  Try '??help' for help. See also '?copyright', '?cite' and '?authors'
 gap>
 ```
