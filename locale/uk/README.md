@@ -23,3 +23,8 @@ Discrete Mathematics. Потім цей урок
 Ми висловлюємо подяку за фінансову підтримку проєктам [CCP-CoDiMa](https://archive.cs.st-andrews.ac.uk/codima/)
 (Collaborative Computational Project in the area of Computational Discrete Mathematics
 EP/M022641/1) та [Horizon 2020](https://ec.europa.eu/programmes/horizon2020/) [European Research Infrastructures](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/european-research-infrastructures-including-e-infrastructures) проекту [OpenDreamKit](https://opendreamkit.org/) (#<a href="https://cordis.europa.eu/project/rcn/198334_en.html">676541</a>).
+
+The [Ukrainian translation of this lesson](https://ukrainian-carpentries.github.io/gap-lesson/)
+is available at the [Ukrainian Carpentries Community website](https://ukrainian-carpentries.github.io/).
+We acknowledge the support of the final stage of this translation project
+from the Isaac Newton Institute Rebuild Ukraine Scheme.
