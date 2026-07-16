@@ -37,3 +37,8 @@ EP/M022641/1 and from the [OpenDreamKit](https://opendreamkit.org/)
 [Horizon 2020](https://ec.europa.eu/programmes/horizon2020/)
 [European Research Infrastructures](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/european-research-infrastructures-including-e-infrastructures)
 project (#<a href="https://cordis.europa.eu/project/rcn/198334_en.html">676541</a>).
+
+The [Ukrainian translation of this lesson](https://ukrainian-carpentries.github.io/gap-lesson/)
+is available at the [Ukrainian Carpentries Community website](https://ukrainian-carpentries.github.io/).
+We acknowledge the support of the final stage of this translation project
+from the Isaac Newton Institute Rebuild Ukraine Scheme.
